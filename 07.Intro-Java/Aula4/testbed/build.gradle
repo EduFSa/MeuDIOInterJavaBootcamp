@@ -1,0 +1,38 @@
+plugins {
+	id 'java'
+	id 'checkstyle'
+	id 'pmd'
+}
+
+group = 'br.com.globallabs'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testCompile group: 'junit', name: 'junit', version: '4.12'
+	// implementation 'org.springframework.boot:spring-boot-starter'
+	// testImplementation('org.springframework.boot:spring-boot-starter-test') {
+	// 	exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	// }
+}
+
+test {
+	useJUnitPlatform()
+}
+
+checkstyle {
+	toolVersion = '8.21'
+	showViolations = true
+	configFile = file("config/checkstyle/google_checks.xml")
+}
+
+pmd {
+	consoleOutput = true
+	toolVersion = '6.15.0'
+	ruleSetFiles = files("config/pmd/all-java.xml")
+	ignoreFailures = true
+}

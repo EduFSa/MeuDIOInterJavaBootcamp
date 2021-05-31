@@ -1,0 +1,49 @@
+		Olá, pessoal. Meu nome é Eduardo Sá, uso frequentemente as distribuições Linux para uso pessoal há mais de 15 anos, porém cada dia mais acabo descobrindo coisas novas e m1e surpreendendo com tamanha praticidade e produtividade do terminal, muitas vezes rechaçado por alguns que não o conhecem.
+
+		Por mais que eu ache que entenda bastante sobre o ecossistema do linux, cada dia tenho que calçar minhas sandálias da humildade e que sempre vou encontrar alguém que tenha algo mais a oferecer de conhecimento sobre ele. Não só assim, costumo sempre "fuçar" e tentar descobrir coisas novas a partir destes novos ensinamentos: não foi diferente com os cursos ministrados aqui no DIO. A partir das excelentes aulas de Daviny e Bruno, acabei procurando mais a respeito e descobrindo algumas coisas que são MUITO produtivas na navegação do terminal e que, com certeza, ajudarão vocês durante essa jornada. Dei uma pequena pausa no prosseguimento do bootcamp para compartilhar alguma coisa que eu já conheço com vocês e mostrar um pouco deste meu processo de aprendizado.
+
+		Antes de mais nada, preciso dizer que não somente existe o shell que nós aprendemos aqui, chamado de bash, mas também outros shells que são bastante úteis e práticos. Na nossa jornada do Inter Java Bootcamp e da nossa prática como desenvolvedor, precisaremos bastante de usar os comandos git e nos ambientarmos bem com o terminal. Dentre os mais utilizados hoje para o ambiente de desenvolvedor para facilitar a nossa vida, posso exemplificar o zsh, o qual uso há um ano desde que eu comecei a ter meu primeiro contato com o desenvolvimento utilizando git. 
+
+	
+
+1. O poderoso "zsh"
+
+
+		Tem como principal capacidade sua adição de plugins e temas que vão muito além de dar uma carinha bonita ao terminal. O shell alternativo estende várias funções do bash e é compatível com a grande maioria dos seus recursos. 
+
+		Dentre os plugins mais úteis temos o de nome git nativo do shell, que verifica gráfica e automaticamente o status da branch atual de um repositório local através de cores e símbolos, economizando vários comandos "git status". Já dentre os recursos nativos mais interessantes, temos a extensão da função de busca de comandos anteriores permitindo que a busca seja feita com as mesmas setas para-cima e para-baixo, porém com apenas os comandos do histórico que já começam com o que você já digitou.
+
+		Os links de artigos para a instalação do zsh, oh-my-zsh e seus temas, colocarei ao final do artigo, pois antes de instalar, vou mostrar algumas coisas interessantes nos tópicos seguintes e você decidirá se ele vale a pena ou não de ser instalado, apenas por este momento com certeza ;)  
+
+
+
+2. Segredos no comando cd no zsh. 
+
+
+	Ao esmiuçar a lista de aliases durante a aula do assunto, utilizando o comando alias | less, descobri que existem dentro do alias padrão do zsh as seguintes substituições:
+
+Isso significa que, ao digitar os comandos '1', '2', até o 9, eles se convertem em 'cd -', 'cd -1' até o 'cd -9'. No entanto o que significa esses números que não existiam no cd do bash? Ouviram vocês nas aulas de Algoritmos e Estruturas de dados sobre Pilhas? A cada comando cd realizado, seu caminho anterior fica armazenado através de um push numa estrutura de pilha criada pelo zsh da qual podemos eliminá-lo da pilha e acessá-lo posteriormente a partir do uso do comando 'cd -' ou 'popd'. Podemos também fazer o acesso a qualquer um dos diretórios da pilha digitando o 'cd -' seguido da tecla TAB, que fará com que o shell mostre qual as opções disponíveis de pastas anteriores, selecionando-as com as setas para cima e para baixo. Tudo isso significa que estaremos economizando muito tempo ao tentar re-acessar pastas anteriores em locais distantes.  	
+
+Ao digitarmos o número que representa o diretório desejado e pressionarmos ENTER, além de acessá-lo, automaticamente o diretório anterior ficará no topo da pilha assim como qualquer outro comando cd dentro do zsh, conforme descrito na sequência abaixo:
+
+
+
+3. E aí, se eu não tiver ZSH?
+
+
+	O recurso similar também é disponível no bash na forma dos comandos pushd e popd. O pushd funciona igual ao cd do zsh. Também é possível o uso do comando "cd -" que fará sempre um push da pasta atual e o pop do topo da pilha automaticamente, alternando entre os dois últimos diretórios que você acessou, porém sem a praticidade do ZSH com o acesso em forma de lista dos diretórios que estão abaixo do topo da pilha de diretórios.
+
+
+
+4. Links com instruções para instalação
+
+
+Como preciso voltar para meu bootcamp e já existem vários tutoriais a respeito da instalação destes recursos, vou deixar apenas os links para vocês abaixo. Bom proveito!!
+
+
+
+https://medium.com/@rgdev/como-instalar-oh-my-zsh-c0f96218fd90
+
+https://blog.rocketseat.com.br/terminal-com-oh-my-zsh-spaceship-dracula-e-mais/
+
+

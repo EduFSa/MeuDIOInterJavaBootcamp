@@ -1,0 +1,39 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.10.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	id 'pmd'
+	id 'checkstyle'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
+
+checkstyle {
+	toolVersion = '8.42'
+	showViolations = true
+	configFile = file("config/checkstyle/google_checks.xml")
+}
+
+pmd {
+	consoleOutput = true
+	toolVersion = '6.15.0'
+	ruleSetFiles = files("config/pmd/all-java.xml")
+	ignoreFailures = true
+}

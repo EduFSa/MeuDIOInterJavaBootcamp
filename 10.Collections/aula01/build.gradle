@@ -1,0 +1,15 @@
+plugins {
+	id 'java'
+}
+
+group = 'one.digitalinnovation.collections'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+
+}
