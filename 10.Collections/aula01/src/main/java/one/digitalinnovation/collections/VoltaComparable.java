@@ -1,4 +1,4 @@
-package one.digitalinnovation.collections;
+package one.digitalinnovation.collections.comparators;
 
 public class VoltaComparable implements Comparable<VoltaComparable> {
     private Integer numero;

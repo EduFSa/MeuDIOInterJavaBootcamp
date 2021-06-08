@@ -1,4 +1,4 @@
-package one.digitalinnovation.collections;
+package one.digitalinnovation.collections.comparators;
 
 import java.util.ArrayList;
 import java.util.Collections;
