@@ -3,6 +3,7 @@ package one.digitalinnovation.collections;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 // Neste exercício, simularei a adicção de voltas de uma corrida em uma lista de 
@@ -51,5 +52,22 @@ public class MeuComparatorSandbox {
 
         System.out.println(corridaComparable);
 
+        // Reaproveitando o código e a primeira lista de corrida, é possível utilizar
+        // o TreeMap adicionando a classe Comparator criada, levando em consideração que
+        // o valor Strign será o piloto que fez a volta
+
+        TreeMap<Volta, String> corridas = new TreeMap<Volta, String>(new ComparatorMelhoresVoltasValidadas());
+
+        // Povoa o treemap com a lista anterior colocando as 4 primeiras da lista na
+        // corrida 1
+        corrida.sort(Comparator.comparingInt(Volta::getNumero));
+        for (int i = 0; i < 4; i++) {
+            corridas.put(corrida.remove(0), "Piquet");
+        }
+        for (Volta v : corrida) {
+            corridas.put(v, "Senna");
+        }
+
+        System.out.println(corridas);
     }
 }
