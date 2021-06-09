@@ -17,7 +17,6 @@ public class MeuOptionalSandbox {
         lista.add(estadoVazio);
 
         Integer a;
-        Integer maiorQue30;
 
         for (Optional<Integer> o : lista) {
             o.ifPresentOrElse(System.out::println, () -> System.out.println("Optional vazio"));
@@ -26,7 +25,6 @@ public class MeuOptionalSandbox {
             if (o.isPresent()) {
                 a = o.get();
                 if (a > 30) {
-                    maiorQue30 = a;
                     System.out.println("Maior que 30");
                 }
 
